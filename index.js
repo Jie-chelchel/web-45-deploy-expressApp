@@ -10,7 +10,7 @@ server.use(cors());
 let users = [{ username: "Jie", password: "kkkkkk" }];
 
 server.get("/", (req, res) => {
-  res.send("Hello Jie");
+  res.send("Hello There");
 });
 
 server.get("/api/users", (req, res) => {
@@ -24,6 +24,14 @@ server.post("/api/register", (req, res) => {
 
 server.post("/api/login", (req, res) => {
   res.send(`welcome back`);
+});
+
+//eslint-disable-next-line
+server.use((err, req, res, next) => {
+  res.status(500).json({
+    message: err.message,
+    stack: err.stack,
+  });
 });
 
 server.listen(port, () => {
