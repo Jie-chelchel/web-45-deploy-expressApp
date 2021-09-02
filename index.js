@@ -10,7 +10,7 @@ server.use(cors());
 let users = [{ username: "Jie", password: "kkkkkk" }];
 
 server.get("/", (req, res) => {
-  res.send("Hello There");
+  res.send("Hello There, welcome to the app");
 });
 
 server.get("/api/users", (req, res) => {
